@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SPITians_Bay - PG Match Score Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <section class="how-it-works">
+      <h1 class="main-title">SPITians_Bay</h1>
+      <p class="community-description">Your trusted college student community connecting freshers with senior insights and hassle-free PG rooms - no brokerage, just genuine help from your college seniors!</p>
+    </section>
+    
+    <div class="input-layout">
+      <div class="note-section">
+        <p class="weightage-note">NOTE : Sum of all Weightage must be 100</p>
+        <p id="weightageRemaining" class="weightage-remaining">Weightage Remaining: 0</p>
+      </div>
+      
+      <form id="inputForm">
+        <div class="main-input-grid">
+          <!-- Top Section: Values and Weightages -->
+          <div class="top-section">
+            <div class="value-inputs">
+              <div class="input-box">
+                <label>RENT VALUE</label>
+                <input type="number" id="preferredRent" value="10000">
+              </div>
+              <div class="input-box">
+                <label>Distance from College</label>
+                <input type="number" id="preferredDistance" value="5">
+              </div>
+              <div class="input-box">
+                <label>Students/Room</label>
+                <input type="number" id="preferredBeds" value="3">
+              </div>
+            </div>
+            
+            <div class="weightage-inputs">
+              <div class="input-box">
+                <label>Rent Weightage</label>
+                <input type="number" id="rentWeight" value="30">
+              </div>
+              <div class="input-box">
+                <label>Distance Weightage</label>
+                <input type="number" id="distanceWeight" value="25">
+              </div>
+              <div class="input-box">
+                <label>Students/Room weightage</label>
+                <input type="number" id="bedsWeight" value="10">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Middle Section: Gender -->
+          <div class="middle-section">
+            <div class="input-box gender-box">
+              <label>Gender</label>
+              <select id="preferredGender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Unisex">Unisex</option>
+              </select>
+            </div>
+          </div>
+          
+          <!-- Bottom Section: Area and Amenities Preferences -->
+          <div class="bottom-section">
+            <div class="preferences-box area-preferences">
+              <label class="preferences-label">Locality Preferences</label>
+              <div id="areaPrefsContainer"></div>
+              <div class="weightage-box">
+                <label>Locality Weightage</label>
+                <input type="number" id="areaWeight" value="15">
+              </div>
+            </div>
+            
+            <div class="preferences-box amenities-preferences">
+              <label class="preferences-label">Amenities Preferences</label>
+              <div id="amenityPrefsContainer"></div>
+              <div class="weightage-box">
+                <label>Amenities Weightage</label>
+                <input type="number" id="amenitiesWeight" value="20">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="calculate-button-container">
+          <button type="button" onclick="calculateScores()">Calculate</button>
+        </div>
+      </form>
+      
+      <!-- Weightage Chart Container -->
+      <div id="weightageChart"></div>
+    </div>
+    
+    <div class="results">
+      <h2>Results</h2>
+      <div id="resultsList"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html> 
